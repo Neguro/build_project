@@ -23,7 +23,7 @@ En créeant un projet symfony en skeleton les recipes suivantes son installer :
 
 Infos disponible sur : [flex.symfony.com](https://www.flex.symfony.com) la bible des recipes!
 
-# A venir :
+## A venir :
 Fonctions potentiellement a venir :
   - Création automatique d'un vhost sur Wamp Server    
     
