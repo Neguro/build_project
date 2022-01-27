@@ -1,10 +1,10 @@
 ﻿# Script de création de projet symfony : build_project v1.1
 # Par Nassim AHMED ALI - @Neguro
 
-$projectPath = Read-Host "Ou voulez vous créer votre projet ? "
+$projectPath = Read-Host "Ou voulez vous créer votre projet ? (format : C://)"
 Set-Location $projectPath
-$projectName  = Read-Host "Entrez le nom de votre projet symfony : "
-$symfonyVersion = Read-Host "Version de symfony a installer (4.x, 5.x, etc..) : "
+$projectName  = Read-Host "Entrez le nom de votre projet symfony "
+$symfonyVersion = Read-Host "Version de symfony a installer (4.x, 5.x, etc..) "
 $symfonyProject = Read-Host "skeleton ou website"
 
 if ($symfonyProject -eq "skeleton")
@@ -29,8 +29,9 @@ if ($symfonyProject -eq "skeleton")
 }
 elseif ($symfonyProject -eq "website")
 {
-     Set-Location $projectName
+     
      composer create-project symfony/website-skeleton:~$symfonyVersion $projectName
+     Set-Location $projectName
 }
 
 

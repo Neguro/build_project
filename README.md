@@ -1,5 +1,5 @@
 # Build project
-![](https://img.shields.io/badge/Fait_avec-Powershell-blue.svg) ![](https://img.shields.io/badge/Version-1.2-green.svg) 
+![](https://img.shields.io/badge/Fait_avec-Powershell-blue.svg) ![](https://img.shields.io/badge/Version-1.2.1-green.svg) 
 
 Ce script a été conçu dans le cadre de mon BTS Services Informatique aux Organisations il permet de : 
 
