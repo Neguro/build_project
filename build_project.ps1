@@ -3,9 +3,9 @@
 
 $projectPath = Read-Host "Ou voulez vous créer votre projet ? "
 Set-Location $projectPath
-$projectName  = Read-Host "Entrez le nom de votre projet symfony "
-$symfonyVersion = Read-Host "Version de symfony a installer "
-$symfonyProject = Read-Host "skeleton ou website "
+$projectName  = Read-Host "Entrez le nom de votre projet symfony : "
+$symfonyVersion = Read-Host "Version de symfony a installer (4.x, 5.x, etc..) : "
+$symfonyProject = Read-Host "skeleton ou website"
 
 if ($symfonyProject -eq "skeleton")
 {
@@ -29,8 +29,8 @@ if ($symfonyProject -eq "skeleton")
 }
 elseif ($symfonyProject -eq "website")
 {
-     composer create-project symfony/website-skeleton:~$symfonyVersion $projectName
      Set-Location $projectName
+     composer create-project symfony/website-skeleton:~$symfonyVersion $projectName
 }
 
 
@@ -56,10 +56,19 @@ git add .
 git commit -m"Premier commit du projet symfony : $projectName"
 Write-Host "============ Dépot local git crée =============`n"
 
-
 # Sync et push avec le depot github distant
-Write-Host "============= Push du dépot local vers le dépot distant =============="
-$githubLink = Read-Host "Lien du dépot github (format : https://github.com/user/nom_depot.git ) "
-git remote add origin $githubLink
-git push -u origin master
-Write-Host "`n Push du dépot local vers le dépot distant effectuer"
+$gitPush = Read-Host "Voulez vous push sur github (y ou n) ?"
+if ($gitPush -eq "y")
+{
+     Write-Host "============= Push du dépot local vers le dépot distant =============="
+     $githubLink = Read-Host "Lien du dépot github (format : https://github.com/user/nom_depot.git ) "
+     git remote add origin $githubLink
+     git push -u origin master
+     Write-Host "`n Push du dépot local vers le dépot distant effectuer"
+}
+elseif ($gitPush -eq "n")
+{
+     Write-Host "Aucun push sur github ne sera fait`n"
+}
+
+
